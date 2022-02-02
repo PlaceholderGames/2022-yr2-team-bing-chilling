@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        //imagine making simple code CRINGE
         Vector3 movment = x * transform.right + z * transform.forward;
         movment = movment * speed * Time.deltaTime;
 
