@@ -1089,7 +1089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c3938ad41f3f545990797c44decb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1269263978674530015, guid: e433fb7f622171c4d94ce6f01234cdb9, type: 3}
+  redBullet: {fileID: 1269263978674530015, guid: e433fb7f622171c4d94ce6f01234cdb9, type: 3}
+  blueBullet: {fileID: 1269263978674530015, guid: 97a8503a24c297740b31eb9ae09f89f2, type: 3}
   shootForce: 300
   upwardForce: 0
   timeBetweenShooting: 0.1

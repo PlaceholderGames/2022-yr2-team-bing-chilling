@@ -17,8 +17,11 @@ using TMPro;
 public class ShootingFPS : MonoBehaviour
 {
 
-    //bullet 
-    public GameObject bullet;
+    //bullet s
+    public GameObject redBullet;
+    public GameObject blueBullet;
+
+    int whichColour;
 
     //bullet force
     public float shootForce, upwardForce;
@@ -57,17 +60,40 @@ public class ShootingFPS : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
+        MyInputLeftClick();
+        MyInputRightClick();
 
         //Set ammo display, if it exists :D
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
-    private void MyInput()
+    private void MyInputLeftClick()
     {
+        whichColour = 0;
         //Check if allowed to hold down button and take corresponding input
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
+
+        //Reloading 
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        //Reload automatically when trying to shoot without ammo
+        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
+
+        //Shooting
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        {
+            //Set bullets shot to 0
+            bulletsShot = 0;
+
+            Shoot();
+        }
+    }
+    private void MyInputRightClick()
+    {
+        whichColour = 1;
+        //Check if allowed to hold down button and take corresponding input
+        if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse1);
+        else shooting = Input.GetKeyDown(KeyCode.Mouse1);
 
         //Reloading 
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
@@ -110,13 +136,28 @@ public class ShootingFPS : MonoBehaviour
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         //Instantiate bullet/projectile
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-                                                                                                   //Rotate bullet to shoot direction
-        currentBullet.transform.forward = directionWithSpread.normalized;
+        if(whichColour == 0)
+        {
+            GameObject currentBulletRed = Instantiate(redBullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+                                                                                                             //Rotate bullet to shoot direction
+            currentBulletRed.transform.forward = directionWithSpread.normalized;
 
-        //Add forces to bullet
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+            //Add forces to bullet
+            currentBulletRed.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+            currentBulletRed.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+
+        }
+        else
+        {
+            GameObject currentBulletBlue = Instantiate(blueBullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+                                                                                                              //Rotate bullet to shoot direction
+            currentBulletBlue.transform.forward = directionWithSpread.normalized;
+
+            //Add forces to bullet
+            currentBulletBlue.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+            currentBulletBlue.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+        }
+        
 
         //Instantiate muzzle flash, if you have one
         if (muzzleFlash != null)
