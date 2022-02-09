@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDo: 4
+  thisIsARedBullet: 0
+  thisIsABlueBullet: 1
