@@ -7,9 +7,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+
+
     //Assingables
     public Transform playerCam;
     public Transform orientation;
+    public float cameraSensivity = 2;
 
     //Other
     private Rigidbody rb;
@@ -186,8 +189,8 @@ public class PlayerMovement : MonoBehaviour
     private float desiredX;
     private void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier * cameraSensivity;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier * cameraSensivity;
 
         //Find current look rotation
         Vector3 rot = playerCam.transform.localRotation.eulerAngles;
