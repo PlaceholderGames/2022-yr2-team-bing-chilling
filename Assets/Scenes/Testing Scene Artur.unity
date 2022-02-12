@@ -1463,6 +1463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 192731832}
+  - component: {fileID: 192731833}
   m_Layer: 0
   m_Name: Waypoints
   m_TagString: Untagged
@@ -1518,6 +1519,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192731833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192731831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b310fc70f9245744c80c45b298a18883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &194352520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
@@ -1875,9 +1888,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254235132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Orienation
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2971,9 +2984,9 @@ GameObject:
   - component: {fileID: 377598092}
   - component: {fileID: 377598091}
   - component: {fileID: 377598090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6342,9 +6355,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 805297363}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6574,9 +6587,9 @@ GameObject:
   - component: {fileID: 845073320}
   - component: {fileID: 845073321}
   - component: {fileID: 845073322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BetterPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7158,9 +7171,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883953302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GunPosition
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11559,9 +11572,9 @@ GameObject:
   - component: {fileID: 1448288613}
   - component: {fileID: 1448288612}
   - component: {fileID: 1448288611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13308,9 +13321,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1618685452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerContainer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13824,9 +13837,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724647849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrappleRopePoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14599,6 +14612,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 88c6911285fea4544baa52a94c397870, type: 3}
       propertyPath: m_Name
       value: CringeGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88c6911285fea4544baa52a94c397870, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88c6911285fea4544baa52a94c397870, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c6911285fea4544baa52a94c397870, type: 3}
@@ -15680,9 +15701,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2046233545}
   - component: {fileID: 2046233546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15910,9 +15931,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072370108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16338,7 +16359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 172.4
+      value: 181.8
       objectReference: {fileID: 0}
     - target: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16378,6 +16399,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+--- !u!1 &5031055591025281895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+  m_PrefabInstance: {fileID: 5031055591025281894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5031055591025281896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031055591025281895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39658b84c295b6344aebe65d4b48be77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!33 &6270314171222174233
 MeshFilter:
   m_ObjectHideFlags: 0
