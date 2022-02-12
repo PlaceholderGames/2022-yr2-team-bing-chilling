@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7430149543326700524}
   m_Layer: 0
   m_Name: BlueBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64728f586f6e0754fa6635947dedf82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDo: 4
+  damageToDoForBlue: 0
+  damageToDoForRed: 0
   thisIsARedBullet: 0
   thisIsABlueBullet: 1
