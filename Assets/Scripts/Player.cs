@@ -40,11 +40,6 @@ public class Player : MonoBehaviour
         movment = movment * speed * Time.deltaTime;
 
         myController.Move(movment);
-        
-        if (Input.GetKeyDown(KeyCode.p))
-        {
-            TakeDamage(20);
-        }
 
         void TakeDamage(int damage)
         {
