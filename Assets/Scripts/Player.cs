@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Reference Code is from Brackeys
+//https://www.youtube.com/watch?v=BLfNP4Sc_iA
+//That is the youtube video
+//In Description he said
+//All content by Brackeys is 100% free. We believe that education should be available for everyone. Any support is truly appreciated so we can keep on making the content free of charge.
+
 public class Player : MonoBehaviour
 {
 
@@ -9,12 +16,17 @@ public class Player : MonoBehaviour
 
     public CharacterController myController;
 
+    
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -28,9 +40,22 @@ public class Player : MonoBehaviour
         movment = movment * speed * Time.deltaTime;
 
         myController.Move(movment);
+        
+        if (Input.GetKeyDown(KeyCode.p))
+        {
+            TakeDamage(20);
+        }
+
+        void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+        }
 
     }
 
+ 
 
 
 

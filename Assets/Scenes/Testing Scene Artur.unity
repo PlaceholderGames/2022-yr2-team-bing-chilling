@@ -10549,7 +10549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1335445828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10557,13 +10557,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335445827}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a50dd05f6c9b2d2439263c89c1ed53ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12.5
   myController: {fileID: 1335445829}
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!143 &1335445829
 CharacterController:
   m_ObjectHideFlags: 0
