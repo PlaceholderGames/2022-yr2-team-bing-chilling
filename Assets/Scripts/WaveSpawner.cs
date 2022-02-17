@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -15,35 +16,40 @@ public class WaveSpawner : MonoBehaviour
 
 
     //change the values later dan
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 5.5f;
     public float countdown = 2f;
     public float timeBetweenEnemies = 0.5f;
 
-    private int waveNumber = 1;
+    public Text waveCountdownText;
+
+    private int waveIndex = 0;
 
     // Update is called once per frame
     void Update()
     {
         if (countdown <= 0f)
         {
-            SpawnWave();
+            StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
 
         countdown -= Time.deltaTime;
+
+        waveCountdownText.text = "Time till next wave: " + Mathf.Round(countdown).ToString();
+
     }
 
     IEnumerator SpawnWave()
     {
+        waveIndex++;
 
-        for(int i = 0; i < waveNumber; i++)
+        for(int i = 0; i < waveIndex; i++)
         {
 
             SpawnEnemy();
             yield return new WaitForSeconds(timeBetweenEnemies);
         }
 
-        waveNumber++;
     }
 
     void SpawnEnemy()
