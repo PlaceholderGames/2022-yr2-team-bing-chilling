@@ -51,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    //Health
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Health
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
 
@@ -73,6 +82,14 @@ public class PlayerMovement : MonoBehaviour
     {
         MyInput();
         Look();
+
+        //Currently does nothing
+        //void TakeDamage(int damage)
+        //{
+        //    currentHealth -= damage;
+
+        //    healthBar.SetHealth(currentHealth);
+        //}
     }
 
     /// <summary>

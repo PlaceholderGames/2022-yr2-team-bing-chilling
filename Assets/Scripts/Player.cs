@@ -16,10 +16,7 @@ public class Player : MonoBehaviour
 
     public CharacterController myController;
 
-    
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
+   
 
 
 
@@ -27,8 +24,6 @@ public class Player : MonoBehaviour
     void Start()
     {
 
-        currentHealth = maxHealth;
-       healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -42,13 +37,6 @@ public class Player : MonoBehaviour
         movment = movment * speed * Time.deltaTime;
 
         myController.Move(movment);
-
-        void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
-
-            healthBar.SetHealth(currentHealth);
-        }
 
     }
 
