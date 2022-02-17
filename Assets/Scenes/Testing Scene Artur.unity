@@ -7287,7 +7287,7 @@ MonoBehaviour:
   jumpForce: 300
   maxHealth: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 367285408}
 --- !u!114 &845073322
 MonoBehaviour:
   m_ObjectHideFlags: 0
