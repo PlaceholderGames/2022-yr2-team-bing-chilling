@@ -3086,7 +3086,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  fill: {fileID: 0}
+  fill: {fileID: 96077258}
 --- !u!114 &367285409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11210,8 +11210,8 @@ MonoBehaviour:
   speed: 12.5
   myController: {fileID: 1335445829}
   maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 0}
+  currentHealth: 1
+  healthBar: {fileID: 367285408}
 --- !u!143 &1335445829
 CharacterController:
   m_ObjectHideFlags: 0
