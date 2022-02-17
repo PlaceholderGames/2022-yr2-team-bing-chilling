@@ -317,5 +317,18 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
     }
 
+
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.tag == "OutofBounds")
+        {
+            Debug.Log("BING CHILLING");
+            transform.position = new Vector3(1, 1, 1);
+        }
+
+    }
+
+
 }
 
