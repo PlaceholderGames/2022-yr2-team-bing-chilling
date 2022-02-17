@@ -8388,6 +8388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsCam: {fileID: 377598089}
   TowerCam: {fileID: 756166392}
+  crosshair: {fileID: 816868601}
 --- !u!4 &1013409333
 Transform:
   m_ObjectHideFlags: 0
