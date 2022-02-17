@@ -8,6 +8,7 @@ TagManager:
   - EnemyBlue
   - EnemyRed
   - PlayerBullet
+  - OutofBounds
   layers:
   - Default
   - TransparentFX
