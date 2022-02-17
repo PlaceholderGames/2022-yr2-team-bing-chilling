@@ -8366,6 +8366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1013409333}
   - component: {fileID: 1013409332}
+  - component: {fileID: 1013409334}
   m_Layer: 0
   m_Name: ManagingScripts
   m_TagString: Untagged
@@ -8401,6 +8402,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013409334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013409331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809610ac2e664ae4abf54dbc9074fe91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+  spawnPoint: {fileID: 4582936327942643732}
+  timeBetweenWaves: 5
+  countdown: 2
 --- !u!1 &1014334295
 GameObject:
   m_ObjectHideFlags: 0
@@ -17072,24 +17089,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
---- !u!1 &5031055591025281895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
-  m_PrefabInstance: {fileID: 5031055591025281894}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5031055591025281896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5031055591025281895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39658b84c295b6344aebe65d4b48be77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
 --- !u!33 &6270314171222174233
 MeshFilter:
   m_ObjectHideFlags: 0
