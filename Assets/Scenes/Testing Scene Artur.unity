@@ -2992,7 +2992,7 @@ Transform:
   - {fileID: 4582936327942643732}
   - {fileID: 1744267623}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &360646004 stripped
 Transform:
@@ -7285,6 +7285,9 @@ MonoBehaviour:
   slideForce: 400
   slideCounterMovement: 0.2
   jumpForce: 300
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 367285408}
 --- !u!114 &845073322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11209,9 +11212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12.5
   myController: {fileID: 1335445829}
-  maxHealth: 100
-  currentHealth: 1
-  healthBar: {fileID: 367285408}
 --- !u!143 &1335445829
 CharacterController:
   m_ObjectHideFlags: 0

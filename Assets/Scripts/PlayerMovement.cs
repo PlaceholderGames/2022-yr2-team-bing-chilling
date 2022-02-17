@@ -2,6 +2,8 @@
 //Note from artur, this is not my code it was based on a code created by someone named "Dani"
 //he said its free to use so we're fine with it and mike can not hurt us 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -51,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    //Health
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,18 +68,34 @@ public class PlayerMovement : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
 
     private void FixedUpdate()
     {
         Movement();
+        if (transform.position.y < -5f)
+        {
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+            
     }
 
     private void Update()
     {
         MyInput();
         Look();
+
+        //doesnt work yet will later
+        void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+        }
     }
 
     /// <summary>
