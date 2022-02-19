@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [Header("Things to turn on/off")]
     public GameObject crosshair;
     public GameObject waveText;
+    public GameObject player;
 
     int cringe = 1;
     // Update is called once per frame
@@ -19,8 +20,10 @@ public class CameraController : MonoBehaviour
         {
             if(cringe == 1)
             {
+                //TOWER DEFENSE
                 TowerCam.SetActive(true);
                 fpsCam.SetActive(false);
+                player.SetActive(false);
 
                 crosshair.SetActive(false);
                 waveText.SetActive(true);
@@ -28,8 +31,10 @@ public class CameraController : MonoBehaviour
             }
             else if(cringe == 2)
             {
+                //FPS
                 fpsCam.SetActive(true);
                 TowerCam.SetActive(false);
+                player.SetActive(true);
 
                 crosshair.SetActive(true);
                 waveText.SetActive(false);
