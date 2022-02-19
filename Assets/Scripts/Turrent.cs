@@ -9,6 +9,8 @@ public class Turrent : MonoBehaviour
 
     public Transform partToRotate;
 
+    public float turnSpeed = 10f;
+
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     public string enemyTag = "Enemy";
 
@@ -26,7 +28,7 @@ public class Turrent : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position * turnSpeed);
             if(distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -55,7 +57,7 @@ public class Turrent : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = lookRotation.eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
