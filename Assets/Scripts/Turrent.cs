@@ -5,20 +5,22 @@ using UnityEngine;
 public class Turrent : MonoBehaviour
 {
     //change this to private
-    public Transform target;
+    private Transform target;
+
+    [Header("Things to mess with")]
     public float rangeOfTurrent = 15f;
-
-    public Transform partToRotate;
-
-    public float turnSpeed = 10f;
-
-    //how many shoots per sec
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float turnSpeed = 10f;
 
 
+    [Header("Don't touch this")]
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
+    //also don't change shit here dan
     public string enemyTag = "Enemy";
+    public Transform partToRotate;
+    public GameObject turrentBulletPrefab;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -81,12 +83,13 @@ public class Turrent : MonoBehaviour
 
     void TurrentShoot()
     {
-        Debug.Log("CRINGEEEE");
+        //Debug.Log("CRINGEEEE");
+        Instantiate(turrentBulletPrefab, firePoint.position, firePoint.rotation);
     }
-//
-//
-//
-//
+
+
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
