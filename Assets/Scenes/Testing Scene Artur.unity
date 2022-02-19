@@ -16688,36 +16688,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
   m_PrefabInstance: {fileID: 1789988879}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2063884006
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2063884007}
-  m_Layer: 0
-  m_Name: Fire Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2063884007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063884006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.534, y: 2.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1783669894516617554}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2066221419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
@@ -17250,18 +17220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1441635117218551624, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 2063884007}
-    - target: {fileID: 1441635117218551624, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1441635117218551624, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-      propertyPath: turrentBulletPrefab
-      value: 
-      objectReference: {fileID: 1269263978674530015, guid: e4f5c9fd147769d4e910c4949a46dabf, type: 3}
     - target: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
       propertyPath: m_Name
       value: Rotation-One Gun
@@ -17312,11 +17270,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
---- !u!4 &1783669894516617554 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2254728005806591475, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-  m_PrefabInstance: {fileID: 1783669894516617553}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4582936327942643732
 Transform:
   m_ObjectHideFlags: 0

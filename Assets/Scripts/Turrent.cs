@@ -84,7 +84,13 @@ public class Turrent : MonoBehaviour
     void TurrentShoot()
     {
         //Debug.Log("CRINGEEEE");
-        Instantiate(turrentBulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGo = (GameObject)Instantiate(turrentBulletPrefab, firePoint.position, firePoint.rotation);
+        TurrentBullet bullet = bulletGo.GetComponent<TurrentBullet>();
+
+        if(bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
 
 
