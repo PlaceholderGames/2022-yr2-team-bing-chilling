@@ -38,6 +38,7 @@ public class TurrentBullet : MonoBehaviour
     void HitTarget()
     {
         Debug.Log("Oh no he's hurt");
+        Destroy(gameObject);
     }
 
 }
