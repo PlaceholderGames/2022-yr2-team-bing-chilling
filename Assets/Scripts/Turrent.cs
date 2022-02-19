@@ -11,6 +11,11 @@ public class Turrent : MonoBehaviour
 
     public float turnSpeed = 10f;
 
+    //how many shoots per sec
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     public string enemyTag = "Enemy";
 
@@ -57,9 +62,26 @@ public class Turrent : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime).eulerAngles;
+        Vector3 rotation = lookRotation.eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime).eulerAngles;
+
+        //if(fireCountdown <= 0f)
+        //{
+        //    TurrentShoot();
+        //    fireCountdown = 1f / fireRate;
+        //}
+        //fireCountdown -= Time.deltaTime;
+
     }
+
+    void TurrentShoot()
+    {
+        Debug.Log("CRINGEEEE");
+    }
+
+
+
 
     private void OnDrawGizmosSelected()
     {
