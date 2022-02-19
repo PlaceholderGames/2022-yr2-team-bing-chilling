@@ -11,13 +11,13 @@ public class Turrent : MonoBehaviour
     public Transform partToRotate;
 
     public float turnSpeed = 10f;
-//
-//    //how many shoots per sec
-//    public float fireRate = 1f;
-//    private float fireCountdown = 0f;
-//
-//
-//    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
+
+    //how many shoots per sec
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+
+    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     public string enemyTag = "Enemy";
 
     // Start is called before the first frame update
@@ -63,23 +63,26 @@ public class Turrent : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        //Vector3 rotation = lookRotation.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-//
-//        //if(fireCountdown <= 0f)
-//        //{
-//        //    TurrentShoot();
-//        //    fireCountdown = 1f / fireRate;
-//        //}
-//        //fireCountdown -= Time.deltaTime;
-//
+
+        //this does not work
+        //Vector3 rotation = lookRotation.eulerAngles;
+
+
+        if(fireCountdown <= 0f)
+        {
+            TurrentShoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+
     }
-//
-//    void TurrentShoot()
-//    {
-//        Debug.Log("CRINGEEEE");
-//    }
+
+    void TurrentShoot()
+    {
+        Debug.Log("CRINGEEEE");
+    }
 //
 //
 //
