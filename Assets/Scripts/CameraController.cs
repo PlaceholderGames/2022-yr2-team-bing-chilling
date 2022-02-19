@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
                 //TOWER DEFENSE
                 TowerCam.SetActive(true);
                 fpsCam.SetActive(false);
-                player.SetActive(false);
+                //player.SetActive(false);
 
                 crosshair.SetActive(false);
                 waveText.SetActive(true);
@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
                 //FPS
                 fpsCam.SetActive(true);
                 TowerCam.SetActive(false);
-                player.SetActive(true);
+                //player.SetActive(true);
 
                 crosshair.SetActive(true);
                 waveText.SetActive(false);

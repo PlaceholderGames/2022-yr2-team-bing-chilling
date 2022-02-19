@@ -8463,6 +8463,7 @@ GameObject:
   - component: {fileID: 1013409333}
   - component: {fileID: 1013409332}
   - component: {fileID: 1013409334}
+  - component: {fileID: 1013409335}
   m_Layer: 7
   m_Name: ManagingScripts
   m_TagString: Untagged
@@ -8519,6 +8520,19 @@ MonoBehaviour:
   countdown: 2
   timeBetweenEnemies: 0.2
   waveCountdownText: {fileID: 328610738}
+--- !u!114 &1013409335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013409331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d9edbeb860b9c49bd1edff43094187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
 --- !u!1 &1014334295
 GameObject:
   m_ObjectHideFlags: 0
