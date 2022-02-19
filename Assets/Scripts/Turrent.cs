@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//
 public class Turrent : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     public float rangeOfTurrent = 15f;
-
-    public Transform partToRotate;
-
-    public float turnSpeed = 10f;
-
-    //how many shoots per sec
-    public float fireRate = 1f;
-    private float fireCountdown = 0f;
-
-
-    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
+//
+//    public Transform partToRotate;
+//
+//    public float turnSpeed = 10f;
+//
+//    //how many shoots per sec
+//    public float fireRate = 1f;
+//    private float fireCountdown = 0f;
+//
+//
+//    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     public string enemyTag = "Enemy";
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class Turrent : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position * turnSpeed);
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position );
             if(distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -45,44 +45,44 @@ public class Turrent : MonoBehaviour
         {
             target = nearestEnemy.transform;
         }
-        else
-        {
-            target = null;
-        }
-
-
+//        else
+//        {
+//            target = null;
+//        }
+//
+//
     }
-
-
+//
+//
     // Update is called once per frame
     void Update()
     {
         if( target == null)
             return;
-
-        Vector3 direction = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = lookRotation.eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime).eulerAngles;
-
-        //if(fireCountdown <= 0f)
-        //{
-        //    TurrentShoot();
-        //    fireCountdown = 1f / fireRate;
-        //}
-        //fireCountdown -= Time.deltaTime;
-
+//
+//        Vector3 direction = target.position - transform.position;
+//        Quaternion lookRotation = Quaternion.LookRotation(direction);
+//        Vector3 rotation = lookRotation.eulerAngles;
+//        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+//        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime).eulerAngles;
+//
+//        //if(fireCountdown <= 0f)
+//        //{
+//        //    TurrentShoot();
+//        //    fireCountdown = 1f / fireRate;
+//        //}
+//        //fireCountdown -= Time.deltaTime;
+//
     }
-
-    void TurrentShoot()
-    {
-        Debug.Log("CRINGEEEE");
-    }
-
-
-
-
+//
+//    void TurrentShoot()
+//    {
+//        Debug.Log("CRINGEEEE");
+//    }
+//
+//
+//
+//
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
