@@ -5,20 +5,22 @@ using UnityEngine;
 public class Turrent : MonoBehaviour
 {
     //change this to private
-    public Transform target;
+    private Transform target;
+
+    [Header("Things to mess with")]
     public float rangeOfTurrent = 15f;
-
-    public Transform partToRotate;
-
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
     public float turnSpeed = 10f;
-//
-//    //how many shoots per sec
-//    public float fireRate = 1f;
-//    private float fireCountdown = 0f;
-//
-//
-//    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
+
+
+    [Header("Don't touch this")]
+    //REMEMBER TO ADD A SECOND TAG ON ENEMIES
+    //also don't change shit here dan
     public string enemyTag = "Enemy";
+    public Transform partToRotate;
+    public GameObject turrentBulletPrefab;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -63,27 +65,37 @@ public class Turrent : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        //Vector3 rotation = lookRotation.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-//
-//        //if(fireCountdown <= 0f)
-//        //{
-//        //    TurrentShoot();
-//        //    fireCountdown = 1f / fireRate;
-//        //}
-//        //fireCountdown -= Time.deltaTime;
-//
+
+        //this does not work
+        //Vector3 rotation = lookRotation.eulerAngles;
+
+
+        if(fireCountdown <= 0f)
+        {
+            TurrentShoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+
     }
-//
-//    void TurrentShoot()
-//    {
-//        Debug.Log("CRINGEEEE");
-//    }
-//
-//
-//
-//
+
+    void TurrentShoot()
+    {
+        //Debug.Log("CRINGEEEE");
+        GameObject bulletGo = (GameObject)Instantiate(turrentBulletPrefab, firePoint.position, firePoint.rotation);
+        TurrentBullet bullet = bulletGo.GetComponent<TurrentBullet>();
+
+        if(bullet != null)
+        {
+            bullet.Seek(target);
+        }
+    }
+
+
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
