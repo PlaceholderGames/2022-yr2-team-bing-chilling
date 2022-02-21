@@ -7,7 +7,7 @@ public class TurrentBullet : MonoBehaviour
     private Transform target;
 
     public float speed = 60f;
-    public int damage = 50;
+    public int damage = 20;
 
     public void Seek (Transform _target)
     {
