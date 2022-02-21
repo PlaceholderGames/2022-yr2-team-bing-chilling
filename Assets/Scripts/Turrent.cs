@@ -93,14 +93,12 @@ public class Turrent : MonoBehaviour
         }
     }
 
-
-
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, rangeOfTurrent);
     }
 
+    
 
 }
