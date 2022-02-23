@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5031055592356559875}
   - component: {fileID: 6655692978673933188}
   m_Layer: 0
-  m_Name: EnemyTest
+  m_Name: TowerEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,12 +15,10 @@ public class PlayerBullet : MonoBehaviour
     public bool thisIsARedBullet;
     public bool thisIsABlueBullet;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float damageToBigBoys = 20;
+    public float damage;
+    private Transform target;
+    Enemy enemy;
 
     // Update is called once per frame
     void Update()
@@ -43,8 +41,14 @@ public class PlayerBullet : MonoBehaviour
 
         }
 
+        if(collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageToBigBoys);
+            Debug.Log("BING CHILLING");
+        }
         //destroy it's self on contact with other object
         Destroy(gameObject);
     }
+
 
 }
