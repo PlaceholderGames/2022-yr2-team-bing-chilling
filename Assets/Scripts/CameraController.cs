@@ -11,7 +11,8 @@ public class CameraController : MonoBehaviour
     public GameObject crosshair;
     public GameObject waveText;
 
-    int cringe = 1;
+
+    public int cringe = 1;
 
 
     // Update is called once per frame

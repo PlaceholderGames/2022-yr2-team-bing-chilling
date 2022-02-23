@@ -12,34 +12,57 @@ public class Node : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
+
+    CameraController cameraController;
+
+    private void Awake()
+    {
+        cameraController = GameObject.Find("ManagingScripts").GetComponent<CameraController>();
+    }
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
     }
 
 
     private void OnMouseDown()
     {
-        if(turrent != null)
+        if (cameraController.cringe == 2)
         {
-            Debug.Log("I hate this so much");
-            return;
-        }
 
-        //build a turrent
-        GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
-        turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+
+            if (turrent != null)
+            {
+                Debug.Log("I hate this so much");
+                return;
+            }
+
+
+                //build a turrent
+                GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+            turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+        }
     }
 
     private void OnMouseEnter()
     {
-        rend.material.color = hoverColor;
+        if (cameraController.cringe == 2)
+        { 
+            rend.material.color = hoverColor;
+        }
     }
 
     private void OnMouseExit()
     {
-        rend.material.color = startColor;
+        if (cameraController.cringe == 2)
+        { 
+            rend.material.color = startColor;
+        }
     }
+
+
 
 }
