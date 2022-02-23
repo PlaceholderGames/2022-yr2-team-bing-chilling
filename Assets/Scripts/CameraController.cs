@@ -29,6 +29,9 @@ public class CameraController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
 
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+
                 crosshair.SetActive(false);
                 waveText.SetActive(true);
                 cringe = 2;
@@ -40,6 +43,9 @@ public class CameraController : MonoBehaviour
                 TowerCam.SetActive(false);
                 //player.SetActive(true);
                 //player.GetComponent<PlayerMovement>().enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 
