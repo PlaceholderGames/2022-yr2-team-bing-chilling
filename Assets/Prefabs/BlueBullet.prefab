@@ -129,3 +129,4 @@ MonoBehaviour:
   damageToDoForRed: 0
   thisIsARedBullet: 0
   thisIsABlueBullet: 1
+  damageToBigBoys: 5

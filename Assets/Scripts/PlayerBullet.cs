@@ -15,8 +15,11 @@ public class PlayerBullet : MonoBehaviour
     public bool thisIsARedBullet;
     public bool thisIsABlueBullet;
 
-    public float damageToBigBoys = 20;
-    public float damage;
+    //later change it to blue boys and red boys
+    //but why?
+    //coz upgrades you retard
+    public float damageToBigBoys = 5;
+
     private Transform target;
     Enemy enemy;
 
@@ -28,20 +31,28 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+        //this is meant for small red enemy
         if (collision.gameObject.tag == "EnemyRed" && thisIsABlueBullet == true)
         {
             Debug.Log("BING CHILLING red is dead");
 
         }
-
+        //this is meant for small blue enemy
         if (collision.gameObject.tag == "EnemyBlue" && thisIsARedBullet == true)
         {
             Debug.Log("BING CHILLING blue is dead");
 
         }
 
-        if(collision.gameObject.tag == "Enemy")
+        //this is meant for large red enemy
+        if(collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<Red>() != null && thisIsABlueBullet == true)
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageToBigBoys);
+            Debug.Log("BING CHILLING");
+        }
+
+        //this is meant for large blue enemy
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<Blue>() != null && thisIsARedBullet == true)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damageToBigBoys);
             Debug.Log("BING CHILLING");

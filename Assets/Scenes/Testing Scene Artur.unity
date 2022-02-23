@@ -8553,7 +8553,7 @@ MonoBehaviour:
   TowerCam: {fileID: 756166392}
   crosshair: {fileID: 816868601}
   waveText: {fileID: 328610736}
-  player: {fileID: 1618685451}
+  cringe: 1
 --- !u!4 &1013409333
 Transform:
   m_ObjectHideFlags: 0
