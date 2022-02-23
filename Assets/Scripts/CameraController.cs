@@ -10,9 +10,10 @@ public class CameraController : MonoBehaviour
     [Header("Things to turn on/off")]
     public GameObject crosshair;
     public GameObject waveText;
-    public GameObject player;
 
     int cringe = 1;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +25,9 @@ public class CameraController : MonoBehaviour
                 TowerCam.SetActive(true);
                 fpsCam.SetActive(false);
                 //player.SetActive(false);
+                //player.GetComponent<PlayerMovement>().enabled = false;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
 
                 crosshair.SetActive(false);
                 waveText.SetActive(true);
@@ -35,6 +39,9 @@ public class CameraController : MonoBehaviour
                 fpsCam.SetActive(true);
                 TowerCam.SetActive(false);
                 //player.SetActive(true);
+                //player.GetComponent<PlayerMovement>().enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
 
                 crosshair.SetActive(true);
                 waveText.SetActive(false);
