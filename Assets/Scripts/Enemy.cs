@@ -1,4 +1,4 @@
-
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,9 +8,15 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
-    private void Start()
+    //Code from Brackeys on YouTube
+    public float starthealth = 100;
+    private float health;
+    public Image healthBar;
+
+    void Start()
     {
         target = WaypointsFollow.points[0];
+        health = starthealth;
     }
 
     private void Update()
@@ -36,5 +42,21 @@ public class Enemy : MonoBehaviour
         target = WaypointsFollow.points[wavepointIndex];
     }
 
+    //Reference, Code Idea from Brackeys on YouTube
+    public void TakeDamage (float amount)
+    {
+        health -= amount;
+        healthBar.fillAmount = health / starthealth;
 
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    
+    //Reference, Code Idea from Brackeys on YouTube
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 }

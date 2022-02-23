@@ -7,6 +7,7 @@ public class TurrentBullet : MonoBehaviour
     private Transform target;
 
     public float speed = 60f;
+    public int damage = 20;
 
     public void Seek (Transform _target)
     {
@@ -35,10 +36,22 @@ public class TurrentBullet : MonoBehaviour
 
     }
 
+    //Reference, Took Ideas from Brackeys on YouTube
     void HitTarget()
     {
-        Debug.Log("Oh no he's hurt");
+        Damage(target);
         Destroy(gameObject);
+    }
+
+    //Reference. Took ideas from Brackeys on YouTube
+    void Damage(Transform enemy)
+    {
+        Enemy e = enemy.GetComponent<Enemy>();
+
+        if (e != null)
+        {
+            e.TakeDamage(damage);
+        }
     }
 
 }
