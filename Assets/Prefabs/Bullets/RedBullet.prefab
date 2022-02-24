@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64728f586f6e0754fa6635947dedf82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDoForBlue: 0
-  damageToDoForRed: 0
+  damageToDoForBlue: 6
+  damageToDoForRed: 6
   thisIsARedBullet: 1
   thisIsABlueBullet: 0
   damageToBigBoys: 5

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class EnemyFPS : MonoBehaviour
 {
     private NavMeshAgent Mob;
-    public GameObject Player;
+    private GameObject Player;
     public float MobDistanceRun = 4.4f;
 
     //which am taking from Ka
@@ -17,6 +17,10 @@ public class EnemyFPS : MonoBehaviour
     private float health;
     public Image healthBar;
 
+    private void Awake()
+    {
+        Player = GameObject.Find("BetterPlayer");
+    }
     private void Start()
     {
         health = starthealth;

@@ -35,6 +35,7 @@ public class PlayerBullet : MonoBehaviour
         if (collision.gameObject.tag == "EnemyRed" && thisIsABlueBullet == true)
         {
             Debug.Log("BING CHILLING red is dead");
+            collision.gameObject.GetComponent<EnemyFPS>().TakeDamage(damageToDoForRed);
 
         }
         //this is meant for small blue enemy
