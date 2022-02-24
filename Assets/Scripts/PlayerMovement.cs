@@ -84,10 +84,11 @@ public class PlayerMovement : MonoBehaviour
         Look();
 
         //Currently does nothing
+        //This is Ka's
         //void TakeDamage(int damage)
         //{
         //    currentHealth -= damage;
-
+        //
         //    healthBar.SetHealth(currentHealth);
         //}
     }
@@ -329,6 +330,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    //This is Ka's
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    
+        healthBar.SetHealth(currentHealth);
+    }
+
+    //Reference, Code Idea from Brackeys on YouTube
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 
 }
 

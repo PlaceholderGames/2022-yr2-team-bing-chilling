@@ -9,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     //cope
 
     public Transform enemyPrefab;
+    public Transform enemyFPSPreafab;
     //public Transform enemyPrefabRed;
     //public Transform enemyPrefabBlue;
 
@@ -55,6 +56,7 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
     }
 
 }

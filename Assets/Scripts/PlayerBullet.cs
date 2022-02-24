@@ -15,12 +15,13 @@ public class PlayerBullet : MonoBehaviour
     public bool thisIsARedBullet;
     public bool thisIsABlueBullet;
 
+    //later change it to blue boys and red boys
+    //but why?
+    //coz upgrades you retard
+    public float damageToBigBoys = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Transform target;
+    Enemy enemy;
 
     // Update is called once per frame
     void Update()
@@ -30,21 +31,36 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+        //this is meant for small red enemy
         if (collision.gameObject.tag == "EnemyRed" && thisIsABlueBullet == true)
         {
             Debug.Log("BING CHILLING red is dead");
+            collision.gameObject.GetComponent<EnemyFPS>().TakeDamage(damageToDoForRed);
 
         }
-
+        //this is meant for small blue enemy
         if (collision.gameObject.tag == "EnemyBlue" && thisIsARedBullet == true)
         {
             Debug.Log("BING CHILLING blue is dead");
 
         }
 
+        //this is meant for large red enemy
+        if(collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<Red>() != null && thisIsABlueBullet == true)
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageToBigBoys);
+            Debug.Log("BING CHILLING");
+        }
+
+        //this is meant for large blue enemy
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<Blue>() != null && thisIsARedBullet == true)
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageToBigBoys);
+            Debug.Log("BING CHILLING");
+        }
         //destroy it's self on contact with other object
         Destroy(gameObject);
     }
+
 
 }

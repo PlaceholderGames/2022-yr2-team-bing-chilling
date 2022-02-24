@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 1
+    agentHeight: 3
+    agentSlope: 0
+    agentClimb: 15.97
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 3e846e58298575c4d9943cd559eb60ac, type: 2}
 --- !u!4 &20056883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
@@ -3136,7 +3136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -654.2, y: -458.02127}
+  m_AnchoredPosition: {x: -876.1, y: -234.1}
   m_SizeDelta: {x: 591.2656, y: 133.6207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367285408
@@ -3363,7 +3363,7 @@ GameObject:
   - component: {fileID: 377598092}
   - component: {fileID: 377598091}
   - component: {fileID: 377598090}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6986,7 +6986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 805297363}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7809,7 +7809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883953302}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GunPosition
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -8116,7 +8116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &940551755
 Transform:
@@ -8530,6 +8530,7 @@ GameObject:
   - component: {fileID: 1013409332}
   - component: {fileID: 1013409334}
   - component: {fileID: 1013409335}
+  - component: {fileID: 1013409336}
   m_Layer: 7
   m_Name: ManagingScripts
   m_TagString: Untagged
@@ -8553,7 +8554,7 @@ MonoBehaviour:
   TowerCam: {fileID: 756166392}
   crosshair: {fileID: 816868601}
   waveText: {fileID: 328610736}
-  player: {fileID: 1618685451}
+  cringe: 1
 --- !u!4 &1013409333
 Transform:
   m_ObjectHideFlags: 0
@@ -8581,6 +8582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+  enemyFPSPreafab: {fileID: 5031055592356559886, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
   spawnPoint: {fileID: 4582936327942643732}
   timeBetweenWaves: 5.5
   countdown: 2
@@ -8599,6 +8601,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
+--- !u!114 &1013409336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013409331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05797de8c2b43ed4987fcc786391f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 845073315}
 --- !u!1 &1014334295
 GameObject:
   m_ObjectHideFlags: 0
@@ -14212,7 +14227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1618685452}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -14728,7 +14743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724647849}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GrappleRopePoint
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -15581,7 +15596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88c6911285fea4544baa52a94c397870, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88c6911285fea4544baa52a94c397870, type: 3}
       propertyPath: m_TagString
@@ -16667,7 +16682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046233545}
   - component: {fileID: 2046233546}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Player
   m_Icon: {fileID: 0}
