@@ -8530,6 +8530,7 @@ GameObject:
   - component: {fileID: 1013409332}
   - component: {fileID: 1013409334}
   - component: {fileID: 1013409335}
+  - component: {fileID: 1013409336}
   m_Layer: 7
   m_Name: ManagingScripts
   m_TagString: Untagged
@@ -8599,6 +8600,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
+--- !u!114 &1013409336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013409331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05797de8c2b43ed4987fcc786391f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 845073315}
 --- !u!1 &1014334295
 GameObject:
   m_ObjectHideFlags: 0
