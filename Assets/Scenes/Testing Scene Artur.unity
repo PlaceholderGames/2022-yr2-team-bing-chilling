@@ -3136,7 +3136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -654.2, y: -458.02127}
+  m_AnchoredPosition: {x: -370, y: -233}
   m_SizeDelta: {x: 591.2656, y: 133.6207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367285408
@@ -8582,6 +8582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+  enemyFPSPreafab: {fileID: 0}
   spawnPoint: {fileID: 4582936327942643732}
   timeBetweenWaves: 5.5
   countdown: 2
