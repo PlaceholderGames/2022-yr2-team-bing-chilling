@@ -17,6 +17,7 @@ public class EnemyFPS : MonoBehaviour
     private float health;
     public Image healthBar;
 
+    private bool canTakeDamage;
     private void Awake()
     {
         Player = GameObject.Find("BetterPlayer");
@@ -62,15 +63,88 @@ public class EnemyFPS : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //private void OnCollisionEnter(Collision collision)
+   //private void OnCollisionEnter(Collision collision)
+   //{
+   //    if (collision.gameObject.tag == "Player")
+   //    {
+   //        //yes magic number
+   //        Debug.Log("BING CHILLING you are dead");
+   //        collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(2);
+   //
+   //
+   //    }
+   //}
+
+    //private void OnCollisionStay(Collision collision)
     //{
     //    if (collision.gameObject.tag == "Player")
     //    {
-    //        Debug.Log("BING CHILLING you are dead");
+    //        if(canTakeDamage == true)
+    //        {
+    //        StartCoroutine(WaitForSeconds());
+    //        collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(2);
+    //        //yes magic number
+    //
+    //        }
+    //
     //
     //    }
     //}
+    // called each frame the collider is colliding
+    float _timeColliding;
+    // Time before damage is taken, 1 second default
+    public float timeThreshold = 1f;
 
+    // player health I assume?
+    int _currentHealth = 100;
+
+    // called when first colliding
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            // Reset timer
+            _timeColliding = 0f;
+
+            Debug.Log("Enemy started colliding with player.");
+
+            // Take damage on impact?
+            collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(2);
+        }
+    }
+
+    // called each frame the collider is colliding
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            // If the time is below the threshold, add the delta time
+            if (_timeColliding < timeThreshold)
+            {
+                _timeColliding += Time.deltaTime;
+            }
+            else
+            {
+                // Time is over theshold, player takes damage
+                collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(2);
+                // Reset timer
+                _timeColliding = 0f;
+            }
+        }
+    }
+
+    //-----------------------------------------
+    void PlayerDamage(int amount)
+    {
+        _currentHealth -= amount;
+        Debug.Log(_currentHealth);
+        if (_currentHealth <= 0f)
+        {
+            Die();
+        }
+    }
 }
+
+
 
 
