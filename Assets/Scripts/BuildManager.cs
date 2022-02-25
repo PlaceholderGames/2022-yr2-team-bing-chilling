@@ -18,13 +18,7 @@ public class BuildManager : MonoBehaviour
     }
 
     public GameObject standartTurrentPrefab;
-
-    private void Start()
-    {
-        //this will need to be changed later on
-        turrentToBuild = standartTurrentPrefab;
-    }
-
+    public GameObject MissileTurrentPrefab;
 
     private GameObject turrentToBuild;
 
@@ -32,4 +26,10 @@ public class BuildManager : MonoBehaviour
     {
         return turrentToBuild;
     }
+
+    public void SetTurrentToBuild(GameObject turrent)
+    {
+        turrentToBuild = turrent;
+    }
+
 }
