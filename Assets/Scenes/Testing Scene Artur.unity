@@ -710,9 +710,9 @@ RectTransform:
   m_Father: {fileID: 559837857}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 36.35921, y: -206.549}
   m_SizeDelta: {x: 69.1343, y: 68.751}
   m_Pivot: {x: 0.5000003, y: 0.5}
 --- !u!114 &73141704
@@ -3484,9 +3484,9 @@ RectTransform:
   m_Father: {fileID: 559837857}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 36.35921, y: -344.051}
   m_SizeDelta: {x: 69.1343, y: 68.751}
   m_Pivot: {x: 0.5000003, y: 0.5}
 --- !u!114 &375275069
@@ -5061,7 +5061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &559837857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9433,6 +9433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
+  MissileTurrentPrefab: {fileID: 0}
 --- !u!114 &1013409336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17889,9 +17890,9 @@ RectTransform:
   m_Father: {fileID: 559837857}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 36.35921, y: -275.3}
   m_SizeDelta: {x: 69.1343, y: 68.751}
   m_Pivot: {x: 0.5000003, y: 0.5}
 --- !u!114 &2033269257
@@ -17960,7 +17961,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559837861}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: PurchaseStandartTurrent
+        m_MethodName: PurchaseMissileTurrent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

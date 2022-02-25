@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Node : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
+    BuildManager buildManager;
 
     CameraController cameraController;
 
@@ -24,6 +26,7 @@ public class Node : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        buildManager = BuildManager.instance;
 
     }
 
@@ -32,7 +35,10 @@ public class Node : MonoBehaviour
     {
         if (cameraController.cringe == 2)
         {
-
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+            if (buildManager.GetTurrentToBuild() == null)
+                return;
 
             if (turrent != null)
             {
@@ -43,14 +49,18 @@ public class Node : MonoBehaviour
 
                 //build a turrent
                 GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
-            turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+                turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
         }
     }
 
     private void OnMouseEnter()
     {
         if (cameraController.cringe == 2)
-        { 
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+            if (buildManager.GetTurrentToBuild() == null)
+                return;
             rend.material.color = hoverColor;
         }
     }
