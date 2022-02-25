@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     [Header("Things to turn on/off")]
     public GameObject crosshair;
     public GameObject waveText;
-
+    public GameObject ShopPanel;
 
     public int cringe = 1;
 
@@ -25,8 +25,8 @@ public class CameraController : MonoBehaviour
                 //TOWER DEFENSE
                 TowerCam.SetActive(true);
                 fpsCam.SetActive(false);
-                //player.SetActive(false);
-                //player.GetComponent<PlayerMovement>().enabled = false;
+                ShopPanel.SetActive(true);
+
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
 
@@ -42,8 +42,8 @@ public class CameraController : MonoBehaviour
                 //FPS
                 fpsCam.SetActive(true);
                 TowerCam.SetActive(false);
-                //player.SetActive(true);
-                //player.GetComponent<PlayerMovement>().enabled = true;
+                ShopPanel.SetActive(false);
+
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 

@@ -9385,6 +9385,7 @@ MonoBehaviour:
   TowerCam: {fileID: 756166392}
   crosshair: {fileID: 816868601}
   waveText: {fileID: 328610736}
+  ShopPanel: {fileID: 559837856}
   cringe: 1
 --- !u!4 &1013409333
 Transform:
