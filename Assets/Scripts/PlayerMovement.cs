@@ -329,7 +329,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "OutofBounds")
         {
             Debug.Log("BING CHILLING");
-            transform.position = new Vector3(1, 1, 1);
+            transform.position = new Vector3(98, 2, 384);
         }
 
     }
