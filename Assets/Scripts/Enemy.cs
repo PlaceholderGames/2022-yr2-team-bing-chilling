@@ -58,6 +58,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            PlayerStats.Money = PlayerStats.Money + 50;
+            Debug.Log(PlayerStats.Money);
         }
     }
     
