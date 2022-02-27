@@ -56,9 +56,13 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    GameOver gameOver;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        gameOver = GameObject.Find("ManagingScripts").GetComponent<GameOver>();
+
     }
 
     void Start()
@@ -325,7 +329,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "OutofBounds")
         {
             Debug.Log("BING CHILLING");
-            transform.position = new Vector3(1, 1, 1);
+            transform.position = new Vector3(98, 2, 384);
         }
 
     }
@@ -336,6 +340,10 @@ public class PlayerMovement : MonoBehaviour
         currentHealth -= damage;
     
         healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            gameOver.YouHaveDied();
+        }
     }
 
     //Reference, Code Idea from Brackeys on YouTube

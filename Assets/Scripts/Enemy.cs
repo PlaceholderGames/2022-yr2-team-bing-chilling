@@ -13,6 +13,12 @@ public class Enemy : MonoBehaviour
     private float health;
     public Image healthBar;
 
+    GameOver gameOver;
+    private void Awake()
+    {
+        gameOver = GameObject.Find("ManagingScripts").GetComponent<GameOver>();
+    }
+
     void Start()
     {
         target = WaypointsFollow.points[0];
@@ -35,6 +41,7 @@ public class Enemy : MonoBehaviour
         if(wavepointIndex >= WaypointsFollow.points.Length - 1)
         {
             Destroy(gameObject);
+            gameOver.theyBreachedBase();
             return;
         }
 
@@ -51,6 +58,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            PlayerStats.Money = PlayerStats.Money + 50;
+            Debug.Log(PlayerStats.Money);
         }
     }
     

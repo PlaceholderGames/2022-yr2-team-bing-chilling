@@ -18,8 +18,11 @@ public class EnemyFPS : MonoBehaviour
     public Image healthBar;
 
     private bool canTakeDamage;
+
+    GameOver gameOver;
     private void Awake()
     {
+        gameOver = GameObject.Find("ManagingScripts").GetComponent<GameOver>();
         Player = GameObject.Find("BetterPlayer");
     }
     private void Start()
@@ -53,7 +56,10 @@ public class EnemyFPS : MonoBehaviour
 
         if (health <= 0)
         {
+
             Die();
+            PlayerStats.Money = PlayerStats.Money + 20;
+            Debug.Log(PlayerStats.Money);
         }
     }
 

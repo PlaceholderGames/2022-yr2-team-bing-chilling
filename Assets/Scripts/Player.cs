@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
 
     public CharacterController myController;
 
-   
+    GameOver gameOver;
+
 
 
 
