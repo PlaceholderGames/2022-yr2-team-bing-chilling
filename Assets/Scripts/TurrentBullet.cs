@@ -8,6 +8,7 @@ public class TurrentBullet : MonoBehaviour
 
     public float speed = 60f;
     public int damage = 20;
+    public float explosionRadius = 0;
 
     public void Seek (Transform _target)
     {
@@ -33,6 +34,7 @@ public class TurrentBullet : MonoBehaviour
         }
 
         transform.Translate(directtion.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
 
     }
 
@@ -42,6 +44,8 @@ public class TurrentBullet : MonoBehaviour
         Damage(target);
         Destroy(gameObject);
     }
+
+
 
     //Reference. Took ideas from Brackeys on YouTube
     void Damage(Transform enemy)
