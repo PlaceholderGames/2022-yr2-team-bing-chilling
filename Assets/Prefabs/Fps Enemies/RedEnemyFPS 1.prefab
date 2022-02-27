@@ -226,8 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MobDistanceRun: 4.4
-  starthealth: 100
+  starthealth: 150
   healthBar: {fileID: 6609262715095780378}
+  timeThreshold: 1
 --- !u!1 &6227547376131114472
 GameObject:
   m_ObjectHideFlags: 0
