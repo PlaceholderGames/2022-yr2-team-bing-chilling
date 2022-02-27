@@ -27,7 +27,7 @@ public class GameOver : MonoBehaviour
         deathPanel.SetActive(true);
     }
 
-    void ReturnToMain()
+    public void ReturnToMain()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
