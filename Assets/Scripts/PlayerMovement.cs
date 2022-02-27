@@ -56,9 +56,13 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    GameOver gameOver;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        gameOver = GameObject.Find("ManagingScripts").GetComponent<GameOver>();
+
     }
 
     void Start()
@@ -336,6 +340,10 @@ public class PlayerMovement : MonoBehaviour
         currentHealth -= damage;
     
         healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            gameOver.YouHaveDied();
+        }
     }
 
     //Reference, Code Idea from Brackeys on YouTube
