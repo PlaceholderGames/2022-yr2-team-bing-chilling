@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public int BaseLives = 3;
     public GameObject deathPanel;
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,14 @@ public class GameOver : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
+    }
+    
+    public void theyBreachedBase()
+    {
+        BaseLives--;
+        if (BaseLives <= 0)
+        {
+            YouHaveDied();
+        }
     }
 }

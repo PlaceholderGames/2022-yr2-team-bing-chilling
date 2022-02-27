@@ -8326,7 +8326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: dc532db18e759c54d9a7c3767f2fe99f, type: 3}
+      - m_Target: {fileID: 11500000, guid: 4a7fb95cc48002f4ca79745c081293ec, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
         m_MethodName: 
         m_Mode: 5
@@ -11594,6 +11594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7fb95cc48002f4ca79745c081293ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseLives: 3
   deathPanel: {fileID: 1856934438}
 --- !u!1 &1014334295
 GameObject:
@@ -20744,7 +20745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1856934439
 RectTransform:
   m_ObjectHideFlags: 0
