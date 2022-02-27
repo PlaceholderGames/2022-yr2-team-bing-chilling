@@ -33,6 +33,7 @@ public class TurrentBullet : MonoBehaviour
         }
 
         transform.Translate(directtion.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
 
     }
 
