@@ -10655,7 +10655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-  MissileTurrentPrefab: {fileID: 0}
+  MissileTurrentPrefab: {fileID: 2418514585626158085, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
 --- !u!114 &1013409336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21342,11 +21342,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1271113608047332921, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
       propertyPath: fireRate
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1271113608047332921, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
       propertyPath: rangeOfTurrent
-      value: 22.2
+      value: 64.93
       objectReference: {fileID: 0}
     - target: {fileID: 2418514585626158085, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
       propertyPath: m_Name

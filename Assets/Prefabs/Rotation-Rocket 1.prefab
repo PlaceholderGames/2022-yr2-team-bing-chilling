@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1271113608047332921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117411757497430807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f820079818d35f9488e1476281aa446c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rangeOfTurrent: 15
-  fireRate: 1
-  turnSpeed: 10
-  enemyTag: Enemy
-  partToRotate: {fileID: 2418514585626158086}
-  turrentBulletPrefab: {fileID: 1269263978674530015, guid: e4f5c9fd147769d4e910c4949a46dabf, type: 3}
-  firePoint: {fileID: 1271113609254689356}
 --- !u!1 &1271113609254689355
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,6 +30,25 @@ Transform:
   m_Father: {fileID: 1596911356440668589}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1271113608047332921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117411757497430807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f820079818d35f9488e1476281aa446c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeOfTurrent: 49.87
+  fireRate: 0.2
+  turnSpeed: 10
+  enemyTag: Enemy
+  partToRotate: {fileID: 2418514585626158086}
+  turrentBulletPrefab: {fileID: 1269263978674530015, guid: 57459ee4758f38d408431ee63dbe1517, type: 3}
+  firePoint: {fileID: 1271113609254689356}
 --- !u!1 &2418514585626158085
 GameObject:
   m_ObjectHideFlags: 0
