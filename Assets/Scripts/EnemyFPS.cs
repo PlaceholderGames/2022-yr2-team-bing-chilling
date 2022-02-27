@@ -58,6 +58,8 @@ public class EnemyFPS : MonoBehaviour
         {
 
             Die();
+            PlayerStats.Money = PlayerStats.Money + 20;
+            Debug.Log(PlayerStats.Money);
         }
     }
 

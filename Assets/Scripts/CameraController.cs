@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public GameObject crosshair;
     public GameObject waveText;
     public GameObject ShopPanel;
+    public GameObject money;
 
     public int cringe = 1;
 
@@ -26,6 +27,7 @@ public class CameraController : MonoBehaviour
                 TowerCam.SetActive(true);
                 fpsCam.SetActive(false);
                 ShopPanel.SetActive(true);
+                money.SetActive(true);
 
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
@@ -43,6 +45,7 @@ public class CameraController : MonoBehaviour
                 fpsCam.SetActive(true);
                 TowerCam.SetActive(false);
                 ShopPanel.SetActive(false);
+                money.SetActive(false);
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
