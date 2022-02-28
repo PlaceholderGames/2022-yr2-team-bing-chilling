@@ -6185,10 +6185,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standartTurret:
     prefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-    cost: 50
+    cost: 200
   missileLauncher:
     prefab: {fileID: 2418514585626158085, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
-    cost: 200
+    cost: 400
 --- !u!4 &560530350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
