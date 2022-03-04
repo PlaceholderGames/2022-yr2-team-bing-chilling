@@ -6,6 +6,8 @@ public class Shop : MonoBehaviour
 {
     public TurrentBlueprint standartTurret;
     public TurrentBlueprint missileLauncher;
+    public TurrentBlueprint laserTurret;
+
 
     BuildManager buildManager;
 
@@ -16,14 +18,16 @@ public class Shop : MonoBehaviour
 
     public void SelectStandartTurrent()
     {
-        Debug.Log("CRINGE turrent 1 bought");
         buildManager.SelectTurretToBuild(standartTurret);
     }
     public void SelectMissileTurrent()
     {
-        Debug.Log("CRINGE turrent 1 bought");
         buildManager.SelectTurretToBuild(missileLauncher);
 
+    }
+    public void SelectLaserTurrent()
+    {
+        buildManager.SelectTurretToBuild(laserTurret);
     }
     //
     // public void PurchaseStandartTurrent()

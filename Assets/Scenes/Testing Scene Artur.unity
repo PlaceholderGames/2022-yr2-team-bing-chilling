@@ -6190,6 +6190,9 @@ MonoBehaviour:
   missileLauncher:
     prefab: {fileID: 2418514585626158085, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
     cost: 400
+  laserTurret:
+    prefab: {fileID: 3001759281077637568, guid: 5f8deafe6bf1b6045b69628a12e0da2b, type: 3}
+    cost: 300
 --- !u!4 &560530350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987127082975809318, guid: 6459695c949712f46ad704153fc65fe1, type: 3}
@@ -12109,8 +12112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d9edbeb860b9c49bd1edff43094187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standartTurrentPrefab: {fileID: 1783669894905798548, guid: 85ee86e783f9c9947aa559c2f90b0b2d, type: 3}
-  MissileTurrentPrefab: {fileID: 2418514585626158085, guid: cf6a31ce95f413f4d89cac61fa86d373, type: 3}
 --- !u!114 &1013409336
 MonoBehaviour:
   m_ObjectHideFlags: 0
