@@ -17,6 +17,8 @@ public class Turrent : MonoBehaviour
     public bool useLaser = false;
     public LineRenderer lineRenderer;
     public int damageOverTime = 30;
+    public float slowPct = .5f;
+
     [Header("Don't touch this")]
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     //also don't change shit here dan
@@ -108,6 +110,7 @@ public class Turrent : MonoBehaviour
     {
 
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowPct);
         if (!lineRenderer.enabled)
             lineRenderer.enabled = true;
 

@@ -4,7 +4,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int moneyToGive = 0;
-    public float speed = 8f;
+    public float startSpeed = 8f;
+
+    [HideInInspector]
+    public float speed;
 
     //Code from Brackeys on YouTube
     public float starthealth = 100;
@@ -16,6 +19,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = starthealth;
+        speed = startSpeed;
     }
 
 
@@ -33,6 +37,11 @@ public class Enemy : MonoBehaviour
         }
     }
     
+    public void Slow(float pct)
+    {
+        speed = speed * (1f - pct);
+    }
+
     //Reference, Code Idea from Brackeys on YouTube
     void Die()
     {
