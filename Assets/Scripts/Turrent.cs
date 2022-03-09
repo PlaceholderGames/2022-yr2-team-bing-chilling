@@ -110,7 +110,9 @@ public class Turrent : MonoBehaviour
     {
 
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        //might make this into a separate function
         targetEnemy.Slow(slowPct);
+
         if (!lineRenderer.enabled)
             lineRenderer.enabled = true;
 
