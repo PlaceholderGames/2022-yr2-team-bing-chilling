@@ -6,6 +6,7 @@ public class Turrent : MonoBehaviour
 {
     //change this to private
     private Transform target;
+    private Enemy targetEnemy;
 
     [Header("Things to mess with")]
     public float rangeOfTurrent = 15f;
@@ -49,6 +50,7 @@ public class Turrent : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= rangeOfTurrent)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
@@ -105,7 +107,7 @@ public class Turrent : MonoBehaviour
     void Laser()
     {
 
-        target.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
         if (!lineRenderer.enabled)
             lineRenderer.enabled = true;
 
