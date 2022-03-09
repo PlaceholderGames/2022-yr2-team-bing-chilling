@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 8f;
-
+    public int moneyToGive = 0;
     private Transform target;
     private int wavepointIndex = 0;
 
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            //PlayerStats.Money = PlayerStats.Money + 50;
+            PlayerStats.Money = PlayerStats.Money + moneyToGive;
             //Debug.Log(PlayerStats.Money);
         }
     }
