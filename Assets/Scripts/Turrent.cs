@@ -6,6 +6,7 @@ public class Turrent : MonoBehaviour
 {
     //change this to private
     private Transform target;
+    private Enemy targetEnemy;
 
     [Header("Things to mess with")]
     public float rangeOfTurrent = 15f;
@@ -13,6 +14,10 @@ public class Turrent : MonoBehaviour
     private float fireCountdown = 0f;
     public float turnSpeed = 10f;
 
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
+    public int damageOverTime = 30;
+    public float slowPct = .5f;
 
     [Header("Don't touch this")]
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
@@ -47,6 +52,7 @@ public class Turrent : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= rangeOfTurrent)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
@@ -61,24 +67,57 @@ public class Turrent : MonoBehaviour
     void Update()
     {
         if( target == null)
-            return;
+        {
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                    lineRenderer.enabled = false;
+            }
 
+            return;
+        }
+
+        LockOnTarget();
+
+        if (useLaser)
+        {
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                TurrentShoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+
+
+
+    }
+
+    void LockOnTarget()
+    {
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        //this does not work
-        //Vector3 rotation = lookRotation.eulerAngles;
+    }
 
 
-        if(fireCountdown <= 0f)
-        {
-            TurrentShoot();
-            fireCountdown = 1f / fireRate;
-        }
-        fireCountdown -= Time.deltaTime;
+    void Laser()
+    {
 
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        //might make this into a separate function
+        targetEnemy.Slow(slowPct);
+
+        if (!lineRenderer.enabled)
+            lineRenderer.enabled = true;
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
     }
 
     void TurrentShoot()

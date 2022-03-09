@@ -3,51 +3,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 8f;
+    public int moneyToGive = 0;
+    public float startSpeed = 8f;
 
-    private Transform target;
-    private int wavepointIndex = 0;
+    [HideInInspector]
+    public float speed;
 
     //Code from Brackeys on YouTube
     public float starthealth = 100;
     private float health;
     public Image healthBar;
 
-    GameOver gameOver;
-    private void Awake()
-    {
-        gameOver = GameObject.Find("ManagingScripts").GetComponent<GameOver>();
-    }
+
 
     void Start()
     {
-        target = WaypointsFollow.points[0];
         health = starthealth;
+        speed = startSpeed;
     }
 
-    private void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
-        {
-            GetNextWaypoint();
-        }
-    }
-
-    void GetNextWaypoint()
-    {
-        if(wavepointIndex >= WaypointsFollow.points.Length - 1)
-        {
-            Destroy(gameObject);
-            gameOver.theyBreachedBase();
-            return;
-        }
-
-        wavepointIndex++;
-        target = WaypointsFollow.points[wavepointIndex];
-    }
 
     //Reference, Code Idea from Brackeys on YouTube
     public void TakeDamage (float amount)
@@ -58,11 +32,16 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            //PlayerStats.Money = PlayerStats.Money + 50;
+            PlayerStats.Money = PlayerStats.Money + moneyToGive;
             //Debug.Log(PlayerStats.Money);
         }
     }
     
+    public void Slow(float pct)
+    {
+        speed = speed * (1f - pct);
+    }
+
     //Reference, Code Idea from Brackeys on YouTube
     void Die()
     {

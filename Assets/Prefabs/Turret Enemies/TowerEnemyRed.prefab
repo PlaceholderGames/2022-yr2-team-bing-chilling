@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5031055592356559875}
   - component: {fileID: 6655692978673933188}
   - component: {fileID: -759844363317918294}
+  - component: {fileID: 2337399172683313677}
   m_Layer: 0
   m_Name: TowerEnemyRed
   m_TagString: Enemy
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39658b84c295b6344aebe65d4b48be77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyToGive: 0
   speed: 20
   starthealth: 200
   healthBar: {fileID: 6609262715095780378}
@@ -199,6 +201,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379b554209b72d548962aa4d161e934c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2337399172683313677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031055592356559874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713f96ff16de6944fb31a91b0dbf6aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6227547376131114472

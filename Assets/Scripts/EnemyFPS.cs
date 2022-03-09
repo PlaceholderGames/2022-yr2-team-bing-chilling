@@ -10,6 +10,7 @@ public class EnemyFPS : MonoBehaviour
     private NavMeshAgent Mob;
     private GameObject Player;
     public float MobDistanceRun = 4.4f;
+    public int moneyToGive = 20;
 
     //which am taking from Ka
     //Code from Brackeys on YouTube
@@ -58,7 +59,7 @@ public class EnemyFPS : MonoBehaviour
         {
 
             Die();
-            PlayerStats.Money = PlayerStats.Money + 20;
+            PlayerStats.Money = PlayerStats.Money + moneyToGive;
             Debug.Log(PlayerStats.Money);
         }
     }

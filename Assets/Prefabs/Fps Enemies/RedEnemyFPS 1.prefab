@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MobDistanceRun: 4.4
+  moneyToGive: 20
   starthealth: 150
   healthBar: {fileID: 6609262715095780378}
   timeThreshold: 1
