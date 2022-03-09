@@ -15,7 +15,7 @@ public class Turrent : MonoBehaviour
 
     public bool useLaser = false;
     public LineRenderer lineRenderer;
-
+    public int damageOverTime = 30;
     [Header("Don't touch this")]
     //REMEMBER TO ADD A SECOND TAG ON ENEMIES
     //also don't change shit here dan
@@ -104,6 +104,8 @@ public class Turrent : MonoBehaviour
 
     void Laser()
     {
+
+        target.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
         if (!lineRenderer.enabled)
             lineRenderer.enabled = true;
 
