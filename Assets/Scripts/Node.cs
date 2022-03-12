@@ -9,8 +9,10 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Vector3 positionOffset;
 
-    [Header("Optional")]
+    [Header("Don't touch")]
     public GameObject turrent;
+    public TurrentBlueprint turrentBlueprint;
+    public bool isUpgraded = false;
 
     private Renderer rend;
     private Color startColor;
@@ -70,6 +72,27 @@ public class Node : MonoBehaviour
         //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
         GameObject _turrent = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turrent = _turrent;
+
+        turrentBlueprint = blueprint;
+    }
+
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.Money < turrentBlueprint.upgradeCost)
+        {
+            return;
+        }
+        PlayerStats.Money -= turrentBlueprint.upgradeCost;
+
+        //destroy old turrent
+        Destroy(turrent);
+
+        //build new turrent
+        //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+        GameObject _turrent = (GameObject)Instantiate(turrentBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turrent = _turrent;
+
+        isUpgraded = true;
     }
 
 
