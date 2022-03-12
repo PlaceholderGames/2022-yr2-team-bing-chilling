@@ -25,17 +25,7 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild { get { return turrentToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turrentToBuild.cost; } }
 
-    public void BuildTurretOn(Node node)
-    {
-        if(PlayerStats.Money < turrentToBuild.cost)
-        {
-            return;
-        }
-        PlayerStats.Money -= turrentToBuild.cost;
-        //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
-        GameObject  turrent = (GameObject)Instantiate(turrentToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.turrent = turrent;
-    }
+
 
     public void SelectNode(Node node)
     {
@@ -62,6 +52,12 @@ public class BuildManager : MonoBehaviour
         selectedNode = null;
         nodeUI.Hide();
     }
+
+    public TurrentBlueprint GetTurrentToBuild()
+    {
+        return turrentToBuild;
+    }
+
 
 }
 //Follow the dead in the dark of damnation

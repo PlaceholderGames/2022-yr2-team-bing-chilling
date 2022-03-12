@@ -54,9 +54,24 @@ public class Node : MonoBehaviour
                 return;
 
             //build a turrent
-            buildManager.BuildTurretOn(this);
+            //buildManager.BuildTurretOn(this);
+
+            BuildTurret(buildManager.GetTurrentToBuild());
         }
     }
+
+    void BuildTurret (TurrentBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            return;
+        }
+        PlayerStats.Money -= blueprint.cost;
+        //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+        GameObject _turrent = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        turrent = _turrent;
+    }
+
 
     private void OnMouseEnter()
     {
