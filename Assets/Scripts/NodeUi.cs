@@ -9,6 +9,7 @@ public class NodeUi : MonoBehaviour
     private Node target;
 
     public Text upgradeCost;
+    public Button upgradeButton;
 
     public void SetTarget(Node _target)
     {
@@ -16,7 +17,17 @@ public class NodeUi : MonoBehaviour
 
         upgradeCost.text = "$" + target.turrentBlueprint.upgradeCost;
 
-        transform.position = target.GetBuildPosition();
+        if (!target.isUpgraded)
+        { 
+            transform.position = target.GetBuildPosition();
+            upgradeButton.interactable = true;
+        }
+        else
+        {
+            upgradeCost.text = "MAXED OUT";
+            upgradeButton.interactable = false;
+
+        }
         ui.SetActive(true);
     }
 
