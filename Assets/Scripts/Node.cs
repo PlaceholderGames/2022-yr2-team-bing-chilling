@@ -95,6 +95,13 @@ public class Node : MonoBehaviour
         isUpgraded = true;
     }
 
+    public void sellTurrent()
+    {
+        PlayerStats.Money += turrentBlueprint.GetSellAmount();
+        Destroy(turrent);
+        turrentBlueprint = null;
+    }
+
 
     private void OnMouseEnter()
     {
