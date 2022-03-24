@@ -9,8 +9,10 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Vector3 positionOffset;
 
-    [Header("Optional")]
+    [Header("Don't touch")]
     public GameObject turrent;
+    public TurrentBlueprint turrentBlueprint;
+    public bool isUpgraded = false;
 
     private Renderer rend;
     private Color startColor;
@@ -43,20 +45,63 @@ public class Node : MonoBehaviour
         {
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
-            if (!buildManager.CanBuild)
-                return;
 
             if (turrent != null)
             {
-                Debug.Log("I hate this so much");
+                buildManager.SelectNode(this);
                 return;
             }
 
+            if (!buildManager.CanBuild)
+                return;
 
             //build a turrent
-            buildManager.BuildTurretOn(this);
+            //buildManager.BuildTurretOn(this);
+
+            BuildTurret(buildManager.GetTurrentToBuild());
         }
     }
+
+    void BuildTurret (TurrentBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            return;
+        }
+        PlayerStats.Money -= blueprint.cost;
+        //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+        GameObject _turrent = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        turrent = _turrent;
+
+        turrentBlueprint = blueprint;
+    }
+
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.Money < turrentBlueprint.upgradeCost)
+        {
+            return;
+        }
+        PlayerStats.Money -= turrentBlueprint.upgradeCost;
+
+        //destroy old turrent
+        Destroy(turrent);
+
+        //build new turrent
+        //GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+        GameObject _turrent = (GameObject)Instantiate(turrentBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turrent = _turrent;
+
+        isUpgraded = true;
+    }
+
+    public void sellTurrent()
+    {
+        PlayerStats.Money += turrentBlueprint.GetSellAmount();
+        Destroy(turrent);
+        turrentBlueprint = null;
+    }
+
 
     private void OnMouseEnter()
     {

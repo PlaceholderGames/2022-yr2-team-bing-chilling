@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
+
     public GameObject fpsCam;
     public GameObject TowerCam;
 
@@ -46,6 +48,7 @@ public class CameraController : MonoBehaviour
                 TowerCam.SetActive(false);
                 ShopPanel.SetActive(false);
                 money.SetActive(false);
+
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
