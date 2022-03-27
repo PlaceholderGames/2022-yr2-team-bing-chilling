@@ -40,6 +40,7 @@ public class EnemyMovement : MonoBehaviour
         if (wavepointIndex >= WaypointsFollow.points.Length - 1)
         {
             Destroy(gameObject);
+            WaveSpawner.EnemiesAlive--;
             gameOver.theyBreachedBase();
             return;
         }
