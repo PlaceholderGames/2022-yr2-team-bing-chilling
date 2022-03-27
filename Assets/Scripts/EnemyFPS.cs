@@ -67,6 +67,7 @@ public class EnemyFPS : MonoBehaviour
     //Reference, Code Idea from Brackeys on YouTube
     void Die()
     {
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 

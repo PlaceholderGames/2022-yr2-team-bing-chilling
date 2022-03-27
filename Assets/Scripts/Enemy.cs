@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     //Reference, Code Idea from Brackeys on YouTube
     void Die()
     {
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 

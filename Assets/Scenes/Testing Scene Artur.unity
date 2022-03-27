@@ -12906,6 +12906,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5031055592356559886, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
   enemyFPSPreafab: {fileID: 5031055592356559886, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
+  waves:
+  - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
+    bigCount: 10
+    bigRate: 1
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 17
+    smallRate: 1
+  - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+    bigCount: 10
+    bigRate: 3
+    smallEnemy: {fileID: 5031055592356559874, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
+    smallCount: 7
+    smallRate: 1
+  - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
+    bigCount: 12
+    bigRate: 2
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 36
+    smallRate: 1
   spawnPoint: {fileID: 4582936327942643732}
   timeBetweenWaves: 5.5
   countdown: 2

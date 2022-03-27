@@ -7,31 +7,44 @@ public class WaveSpawner : MonoBehaviour
 {
     //add more enemies later on
     //cope
-
+    public static int EnemiesAlive = 0;
     public Transform enemyPrefab;
     public Transform enemyFPSPreafab;
     //public Transform enemyPrefabRed;
     //public Transform enemyPrefabBlue;
 
+
+    public Wave[] waves;
     public Transform spawnPoint;
 
 
     //change the values later dan
     public float timeBetweenWaves = 5.5f;
     public float countdown = 2f;
-    public float timeBetweenEnemies = 0.5f;
+    public float timeBetweenEnemies = 1f;
 
     public Text waveCountdownText;
 
     private int waveIndex = 0;
 
+    bool RedEnemyBig;
+    bool RedEnemySmall;
+    bool BlueEnemyBig;
+    bool BlueEnemySmall;
+
     // Update is called once per frame
     void Update()
     {
+        if (EnemiesAlive > 0)
+        {
+            return;
+        }
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            return;
         }
 
         countdown -= Time.deltaTime;
@@ -42,22 +55,30 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        waveIndex++;
         PlayerStats.Wave = PlayerStats.Wave + 1;
 
-        for (int i = 0; i < waveIndex; i++)
-        {
+        Wave wave = waves[waveIndex];
 
-            SpawnEnemy();
-            yield return new WaitForSeconds(timeBetweenEnemies);
+        for (int i = 0; i < wave.bigCount; i++)
+        {
+            
+            SpawnEnemy(wave.bigEnemy);
+            yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
+            SpawnEnemy(wave.smallEnemy);
+            yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
+
         }
 
+        waveIndex++;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        EnemiesAlive++;
+
+        //Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
+        //EnemiesAlive++;
     }
 
 }
