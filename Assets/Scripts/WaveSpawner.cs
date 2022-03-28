@@ -70,6 +70,13 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveIndex++;
+
+        if (waveIndex == waves.Length)
+        {
+            //go back to main menu or next level
+            Debug.Log("mmmmmmmm lolis");
+            this.enabled = false;
+        }
     }
 
     void SpawnEnemy(GameObject enemy)
