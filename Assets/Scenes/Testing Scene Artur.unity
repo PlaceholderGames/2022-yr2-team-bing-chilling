@@ -12908,11 +12908,11 @@ MonoBehaviour:
   enemyFPSPreafab: {fileID: 5031055592356559886, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
   waves:
   - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
-    bigCount: 10
-    bigRate: 1
+    bigCount: 1
+    bigRate: 0.66
     smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
-    smallCount: 17
-    smallRate: 1
+    smallCount: 5
+    smallRate: 1.99
   - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
     bigCount: 10
     bigRate: 3
@@ -12930,6 +12930,8 @@ MonoBehaviour:
   countdown: 2
   timeBetweenEnemies: 0.5
   waveCountdownText: {fileID: 328610738}
+  nextLevel: Level2
+  levelToUnlock: 2
 --- !u!114 &1013409335
 MonoBehaviour:
   m_ObjectHideFlags: 0

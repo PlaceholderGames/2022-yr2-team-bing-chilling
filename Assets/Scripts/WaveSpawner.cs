@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -27,10 +29,8 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    bool RedEnemyBig;
-    bool RedEnemySmall;
-    bool BlueEnemyBig;
-    bool BlueEnemySmall;
+    public string nextLevel = "Level2";
+        public int levelToUnlock = 2;
 
     // Update is called once per frame
     void Update()
@@ -59,11 +59,21 @@ public class WaveSpawner : MonoBehaviour
 
         Wave wave = waves[waveIndex];
 
+
         for (int i = 0; i < wave.bigCount; i++)
         {
             
             SpawnEnemy(wave.bigEnemy);
             yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
+            if(wave.smallCount > 0)
+            {
+                SpawnEnemy(wave.smallEnemy);
+                wave.smallCount--;
+            }
+
+        }
+        for (int j = 0; j < wave.smallCount; j++)
+        {
             SpawnEnemy(wave.smallEnemy);
             yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
 
@@ -76,14 +86,22 @@ public class WaveSpawner : MonoBehaviour
             //go back to main menu or next level
             Debug.Log("mmmmmmmm lolis");
             this.enabled = false;
+            WinLevel();
         }
     }
+
+    public void WinLevel()
+    {
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
 
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         EnemiesAlive++;
-
         //Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
         //EnemiesAlive++;
     }
