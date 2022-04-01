@@ -12908,10 +12908,10 @@ MonoBehaviour:
   enemyFPSPreafab: {fileID: 5031055592356559886, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
   waves:
   - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
-    bigCount: 1
+    bigCount: 10
     bigRate: 0.66
     smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
-    smallCount: 5
+    smallCount: 18
     smallRate: 1.99
   - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
     bigCount: 10

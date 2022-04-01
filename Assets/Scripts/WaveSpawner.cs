@@ -59,25 +59,27 @@ public class WaveSpawner : MonoBehaviour
 
         Wave wave = waves[waveIndex];
 
-
-        for (int i = 0; i < wave.bigCount; i++)
+        EnemiesAlive = wave.bigCount + wave.smallCount;
+        for (int i = 0; i < wave.bigCount + wave.smallCount; i = 0)
         {
             
-            SpawnEnemy(wave.bigEnemy);
-            yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
+
             if(wave.smallCount > 0)
             {
                 SpawnEnemy(wave.smallEnemy);
+                yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
                 wave.smallCount--;
+
             }
 
+            if (wave.bigCount > 0)
+            {
+                SpawnEnemy(wave.bigEnemy);
+                yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
+                wave.bigCount--;
+            }
         }
-        for (int j = 0; j < wave.smallCount; j++)
-        {
-            SpawnEnemy(wave.smallEnemy);
-            yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
 
-        }
 
         waveIndex++;
 
@@ -101,7 +103,6 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        EnemiesAlive++;
         //Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
         //EnemiesAlive++;
     }
