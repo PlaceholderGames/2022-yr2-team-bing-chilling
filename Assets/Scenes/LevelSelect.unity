@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 16649675}
   - component: {fileID: 16649674}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonHard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 116013704}
   - component: {fileID: 116013703}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: ButtonDLC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 852724279}
   - component: {fileID: 852724278}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Buttonhardcore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 970088997}
   - component: {fileID: 970088996}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1244,6 +1244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c41156ff55ee574fb9144dc6b644f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 1634190390}
+  - {fileID: 970088996}
+  - {fileID: 16649674}
+  - {fileID: 852724278}
 --- !u!4 &1232085818
 Transform:
   m_ObjectHideFlags: 0
@@ -1630,7 +1635,7 @@ GameObject:
   - component: {fileID: 1634190391}
   - component: {fileID: 1634190390}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonEasy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
