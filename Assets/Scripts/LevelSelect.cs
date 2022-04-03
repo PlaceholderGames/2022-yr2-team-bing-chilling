@@ -26,11 +26,13 @@ public class LevelSelect : MonoBehaviour
 
     public void Select(string levelName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(levelName);
     }
 
     public void GoBack()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
