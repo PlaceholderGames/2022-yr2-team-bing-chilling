@@ -83,7 +83,7 @@ public class WaveSpawner : MonoBehaviour
 
 
         waveIndex++;
-
+        //remember to leave the last wave empty
         if (waveIndex == waves.Length)
         {
             //go back to main menu or next level
@@ -97,6 +97,8 @@ public class WaveSpawner : MonoBehaviour
     {
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
         winScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
