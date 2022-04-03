@@ -15,6 +15,7 @@ public class WaveSpawner : MonoBehaviour
     //public Transform enemyPrefabRed;
     //public Transform enemyPrefabBlue;
 
+    public GameObject winScreen;
 
     public Wave[] waves;
     public Transform spawnPoint;
@@ -95,7 +96,8 @@ public class WaveSpawner : MonoBehaviour
     public void WinLevel()
     {
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        winScreen.SetActive(true);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
