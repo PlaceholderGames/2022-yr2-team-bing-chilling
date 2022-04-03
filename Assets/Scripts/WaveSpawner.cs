@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class WaveSpawner : MonoBehaviour
     //public Transform enemyPrefabRed;
     //public Transform enemyPrefabBlue;
 
+    public GameObject winScreen;
 
     public Wave[] waves;
     public Transform spawnPoint;
@@ -27,10 +30,8 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    bool RedEnemyBig;
-    bool RedEnemySmall;
-    bool BlueEnemyBig;
-    bool BlueEnemySmall;
+    public string nextLevel = "Level2";
+        public int levelToUnlock = 2;
 
     // Update is called once per frame
     void Update()
@@ -59,31 +60,53 @@ public class WaveSpawner : MonoBehaviour
 
         Wave wave = waves[waveIndex];
 
-        for (int i = 0; i < wave.bigCount; i++)
+        EnemiesAlive = wave.bigCount + wave.smallCount;
+        for (int i = 0; i < wave.bigCount + wave.smallCount; i = 0)
         {
             
-            SpawnEnemy(wave.bigEnemy);
-            yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
-            SpawnEnemy(wave.smallEnemy);
-            yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
 
+            if(wave.smallCount > 0)
+            {
+                SpawnEnemy(wave.smallEnemy);
+                yield return new WaitForSeconds(timeBetweenEnemies / wave.smallRate);
+                wave.smallCount--;
+
+            }
+
+            if (wave.bigCount > 0)
+            {
+                SpawnEnemy(wave.bigEnemy);
+                yield return new WaitForSeconds(timeBetweenEnemies / wave.bigRate);
+                wave.bigCount--;
+            }
         }
 
-        waveIndex++;
 
+        waveIndex++;
+        //remember to leave the last wave empty
         if (waveIndex == waves.Length)
         {
             //go back to main menu or next level
             Debug.Log("mmmmmmmm lolis");
             this.enabled = false;
+            WinLevel();
         }
     }
+
+    public void WinLevel()
+    {
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        winScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
 
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        EnemiesAlive++;
-
         //Instantiate(enemyFPSPreafab, spawnPoint.position, spawnPoint.rotation);
         //EnemiesAlive++;
     }

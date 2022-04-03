@@ -33,9 +33,14 @@ public class GameOver : MonoBehaviour
     public void ReturnToMain()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("MainMenu");
+    }    
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
-    
+
     public void theyBreachedBase()
     {
         BaseLives--;
