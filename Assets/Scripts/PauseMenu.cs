@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     CameraController cameraController;
 
+
     private void Awake()
     {
         cameraController = GameObject.Find("ManagingScripts").GetComponent<CameraController>();
@@ -48,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     public void ReturnMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     void Pause()
@@ -63,4 +64,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
 
     }
+
+
+
 }
