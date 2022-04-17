@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    
+    public Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
 
     void Start()
     {
         resolutions = Screen.resolutions;
+
+        resolutionDropdown.ClearOptions();
+
+        List<string> DropdownOptions = new List<string>();
+
+        resolutionDropdown.AddOptions();
     }
 
     public void SetVolume(float volume)
