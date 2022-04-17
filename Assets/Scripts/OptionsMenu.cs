@@ -7,6 +7,13 @@ public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
+    Resolution[] resolutions;
+
+    void Start()
+    {
+        resolutions = Screen.resolutions;
+    }
+
     public void SetVolume(float volume)
     {
         Debug.Log(volume);
