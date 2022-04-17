@@ -20,7 +20,22 @@ public class OptionsMenu : MonoBehaviour
 
         List<string> DropdownOptions = new List<string>();
 
-        resolutionDropdown.AddOptions();
+        int currentResolutionIndex=0;
+
+        for(int i = 0; i<resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            DropdownOptions.Add(option);
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        
+        resolutionDropdown.AddOptions(DropdownOptions);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+        
     }
 
     public void SetVolume(float volume)
