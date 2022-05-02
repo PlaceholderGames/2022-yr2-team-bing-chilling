@@ -126,9 +126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f820079818d35f9488e1476281aa446c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeOfTurrent: 30
-  fireRate: 1
+  rangeOfTurrent: 40
+  fireRate: 1.1
   turnSpeed: 10
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  damageOverTime: 30
+  slowPct: 0.5
   enemyTag: Enemy
   partToRotate: {fileID: 1783669894905798551}
   turrentBulletPrefab: {fileID: 1269263978674530015, guid: e4f5c9fd147769d4e910c4949a46dabf, type: 3}
