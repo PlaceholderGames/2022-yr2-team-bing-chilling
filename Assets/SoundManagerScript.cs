@@ -5,13 +5,15 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip playerHitSound, fireSound, enemyDeathSound, laserFireSound;
+    public static AudioClip playerHitSound, playerFireSound, turretFireSound, cannonFireSound, enemyDeathSound, laserFireSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
-        fireSound = Resources.Load<AudioClip>("pewPistol");
+        playerFireSound = Resources.Load<AudioClip>("pewPistol");
+        turretFireSound = Resources.Load<AudioClip>("pewTurret");
+        cannonFireSound = Resources.Load<AudioClip>("pewCannon");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -27,7 +29,13 @@ public class SoundManagerScript : MonoBehaviour
         switch (clip)
         {
             case "pewPistol":
-                audioSrc.PlayOneShot(fireSound);
+                audioSrc.PlayOneShot(playerFireSound);
+                break;
+            case "pewTurret":
+                audioSrc.PlayOneShot(turretFireSound);
+                break;
+            case "pewCannon":
+                audioSrc.PlayOneShot(cannonFireSound);
                 break;
         }
     }
