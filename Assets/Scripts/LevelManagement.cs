@@ -16,6 +16,11 @@ public class LevelManagement : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    
+    public void MoveCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
     public void QuitGame()
     {
