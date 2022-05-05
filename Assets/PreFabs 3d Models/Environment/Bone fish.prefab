@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8094836714630082624}
-  - component: {fileID: 786218999213652524}
   m_Layer: 0
   m_Name: Bone fish
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &786218999213652524
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8871374066794146554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.4994545, y: 0.41140825, z: 2.7683105}
-  m_Center: {x: -1.4379025, y: 0.29429588, z: -0.27145386}
 --- !u!1 &8957793713114817999
 GameObject:
   m_ObjectHideFlags: 0

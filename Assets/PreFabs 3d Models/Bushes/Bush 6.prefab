@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4805615775098505078}
-  - component: {fileID: 4988373665736066613}
   m_Layer: 0
   m_Name: Bush 6
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4988373665736066613
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330901564614958540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.7196293, y: 2.0994925, z: 4.2319922}
-  m_Center: {x: -0.37685043, y: 0.5497469, z: -1.0760884}
 --- !u!1 &5671756959024272121
 GameObject:
   m_ObjectHideFlags: 0

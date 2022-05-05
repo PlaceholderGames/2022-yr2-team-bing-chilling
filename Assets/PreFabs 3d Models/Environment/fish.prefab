@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2722959057143819740}
-  - component: {fileID: 2338210382948103300}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -113,16 +112,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2338210382948103300
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3351298768896866150}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.968178, y: 0.5199435, z: 1.6151428}
-  m_Center: {x: -1.9840889, y: 0.24002826, z: -0.3075714}

@@ -172,7 +172,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9045414067509411694}
-  - component: {fileID: 8794823455821617287}
   - component: {fileID: 8794823455821617286}
   m_Layer: 0
   m_Name: Mushrom 2
@@ -196,19 +195,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8794823455821617287
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8560239565779527124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1596014, y: 2.095621, z: 1.8826518}
-  m_Center: {x: -0.112334244, y: 2.1805913, z: -0.0010202347}
 --- !u!65 &8794823455821617286
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783615335130961399}
   - component: {fileID: 960758223818388002}
-  - component: {fileID: 960758223818388003}
   m_Layer: 0
   m_Name: Mushrom 3
   m_TagString: Untagged
@@ -46,19 +45,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43158722, y: 1.2379457, z: 0.5443859}
   m_Center: {x: -0.015881082, y: 0.47033542, z: -0.0548076}
---- !u!65 &960758223818388003
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113756925811216205}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7089865, y: 2.3511872, z: 1.6164224}
-  m_Center: {x: -0.029867392, y: 2.2426503, z: 0.022958733}
 --- !u!1 &493477378332868728
 GameObject:
   m_ObjectHideFlags: 0
