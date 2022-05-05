@@ -223,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209, y: 78}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 224.6836, y: 78}
+  m_SizeDelta: {x: 231.3671, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899755430
 MonoBehaviour:
@@ -246,45 +246,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Team Bing Chilling
-
-
-    Hugo, The Tiger of USW Clan
-
-
-    Artur, The
-    Mad Dog of The Marius Family
-
-
-    Krzysztof, The Alun Family''s Lieutenant
-
-
-    Daniel,
-    The Goose Clan''s Chairman
-
-
-    Ka, The Dragon of Mike Family
-
-
-
-
-    Programming,
-    UI and Menus, Visual Elements - Hugo
-
-
-    Leader, Programming - Artur
-
-
-    Krzysztof
-
-
-    Daniel
-
-
-    Ka
-
-
-    Fonts'
+  m_text: "Team Bing Chilling\n\nHugo, The Tiger of USW Clan\n\nArtur, The Mad Dog
+    of The Marius Family\n\nKrzysztof, The Alun Family's Lieutenant\n\nDaniel, The
+    Goose Clan's Chairman\n\nKa, The Dragon of Mike Family\n\n\n\nProgramming, UI
+    and Menus, Visual Elements - Hugo\n\nLeader, Programming - Artur\n\nGraphics,
+    Programming, Models - Krzysztof\n\nQ&A Tester, Programming, Sound Elements -
+    Daniel\n\nModels, Lighting, Camera, Programming - Ka\n\n\n\nVecteezy.com \nKateryna
+    Mishchuk\nSchmidsi\n\nBrackeys\nDani\nDave\n\nRafa Miguel\nDaFont\nGoogle Fonts"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -439,12 +407,43 @@ MonoBehaviour:
 
 
 
-
-
     Roles
 
 
-    Fonts'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Visual
+    Resources
+
+
+
+
+    Script Tutorials
+
+
+
+
+    Fonts
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
