@@ -15172,7 +15172,7 @@ MonoBehaviour:
     smallRate: 0.66
   spawnPoint: {fileID: 4582936327942643732}
   timeBetweenWaves: 5.5
-  countdown: 2
+  countdown: 5
   timeBetweenEnemies: 0.5
   waveCountdownText: {fileID: 328610738}
   nextLevel: Level2

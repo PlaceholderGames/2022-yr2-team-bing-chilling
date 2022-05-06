@@ -33,6 +33,12 @@ public class WaveSpawner : MonoBehaviour
     public string nextLevel = "Level2";
         public int levelToUnlock = 2;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        EnemiesAlive = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
