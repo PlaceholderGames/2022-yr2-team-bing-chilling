@@ -150,7 +150,6 @@ public class EnemyFPS : MonoBehaviour
         if (_currentHealth <= 0f)
         {
             Die();
-            SoundManagerScript.PlaySound("deathPlayer");
         }
     }
 }

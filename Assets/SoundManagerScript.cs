@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip playerDeathSound, playerFireSound, turretFireSound, smallEnemyDeathSound, laserFireSound, bigEnemyDeathSound;
+    public static AudioClip playerFireSound, turretFireSound, smallEnemyDeathSound, laserFireSound, bigEnemyDeathSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -16,7 +16,6 @@ public class SoundManagerScript : MonoBehaviour
         laserFireSound = Resources.Load<AudioClip>("laserTurret");
         smallEnemyDeathSound = Resources.Load<AudioClip>("deathSmallEnemy");
         bigEnemyDeathSound = Resources.Load<AudioClip>("deathBigEnemy");
-        playerDeathSound = Resources.Load<AudioClip>("deathPlayer");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -46,9 +45,6 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "deathBigEnemy":
                 audioSrc.PlayOneShot(bigEnemyDeathSound);
-                break;
-            case "deathPlayer":
-                audioSrc.PlayOneShot(playerDeathSound);
                 break;
         }
     }
