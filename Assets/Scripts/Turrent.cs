@@ -81,6 +81,7 @@ public class Turrent : MonoBehaviour
 
         if (useLaser)
         {
+            SoundManagerScript.PlaySound("laserTurret");
             Laser();
         }
         else

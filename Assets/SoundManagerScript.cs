@@ -13,7 +13,7 @@ public class SoundManagerScript : MonoBehaviour
     {
         playerFireSound = Resources.Load<AudioClip>("pewPistol");
         turretFireSound = Resources.Load<AudioClip>("pewTurret");
-        cannonFireSound = Resources.Load<AudioClip>("pewCannon");
+        laserFireSound = Resources.Load<AudioClip>("laserTurret");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -34,8 +34,8 @@ public class SoundManagerScript : MonoBehaviour
             case "pewTurret":
                 audioSrc.PlayOneShot(turretFireSound);
                 break;
-            case "pewCannon":
-                audioSrc.PlayOneShot(cannonFireSound);
+            case "laserTurret":
+                audioSrc.PlayOneShot(laserFireSound);
                 break;
         }
     }
