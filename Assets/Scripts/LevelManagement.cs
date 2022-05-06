@@ -12,6 +12,16 @@ public class LevelManagement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void MoveCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void QuitGame()
     {
         Debug.Log("EXIT GAME");

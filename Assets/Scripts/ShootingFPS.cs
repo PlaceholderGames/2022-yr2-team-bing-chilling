@@ -85,6 +85,8 @@ public class ShootingFPS : MonoBehaviour
             //Set bullets shot to 0
             bulletsShot = 0;
 
+            SoundManagerScript.PlaySound("pewPistol");
+
             Shoot();
         }
     }
@@ -105,6 +107,8 @@ public class ShootingFPS : MonoBehaviour
         {
             //Set bullets shot to 0
             bulletsShot = 0;
+
+            SoundManagerScript.PlaySound("pewPistol");
 
             Shoot();
         }

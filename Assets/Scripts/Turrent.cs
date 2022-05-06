@@ -81,12 +81,14 @@ public class Turrent : MonoBehaviour
 
         if (useLaser)
         {
+            SoundManagerScript.PlaySound("laserTurret");
             Laser();
         }
         else
         {
             if (fireCountdown <= 0f)
             {
+                SoundManagerScript.PlaySound("pewTurret");
                 TurrentShoot();
                 fireCountdown = 1f / fireRate;
             }
