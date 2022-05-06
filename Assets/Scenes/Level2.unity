@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.010260095, g: 0.052656606, b: 0.15281191, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1991,7 +1991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28573835, y: 0.92600006}
   m_AnchorMax: {x: 0.591, y: 1}
-  m_AnchoredPosition: {x: -74.6875, y: 5.03125}
+  m_AnchoredPosition: {x: -74.6875, y: 5.0312805}
   m_SizeDelta: {x: -149, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244172192
@@ -17653,23 +17653,47 @@ MonoBehaviour:
   winScreen: {fileID: 1324739793}
   waves:
   - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
-    bigCount: 1
-    bigRate: 0.66
-    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
-    smallCount: 1
-    smallRate: 1.99
+    bigCount: 4
+    bigRate: 0.75
+    smallEnemy: {fileID: 5031055592356559874, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
+    smallCount: 10
+    smallRate: 1.2
   - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
-    bigCount: 1
-    bigRate: 3
+    bigCount: 6
+    bigRate: 0.72
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 12
+    smallRate: 1.15
+  - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
+    bigCount: 8
+    bigRate: 0.7
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 12
+    smallRate: 1.1
+  - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+    bigCount: 20
+    bigRate: 0.75
     smallEnemy: {fileID: 5031055592356559874, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
     smallCount: 1
+    smallRate: 1.05
+  - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+    bigCount: 1
+    bigRate: 0.75
+    smallEnemy: {fileID: 5031055592356559874, guid: d3e22984088a8ed4993488c6a1886896, type: 3}
+    smallCount: 30
     smallRate: 1
   - bigEnemy: {fileID: 5031055592356559874, guid: 3423cf8625bb2444eba801b70575998c, type: 3}
-    bigCount: 0
-    bigRate: 0
+    bigCount: 13
+    bigRate: 0.7
     smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
-    smallCount: 0
-    smallRate: 0
+    smallCount: 22
+    smallRate: 0.9
+  - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+    bigCount: 20
+    bigRate: 0.6
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 30
+    smallRate: 0.8
   spawnPoint: {fileID: 1142581509}
   timeBetweenWaves: 5.5
   countdown: 2
