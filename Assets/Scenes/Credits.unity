@@ -252,7 +252,8 @@ MonoBehaviour:
     and Menus, Visual Elements - Hugo\n\nLeader, Programming - Artur\n\nGraphics,
     Programming, Models - Krzysztof\n\nQ&A Tester, Programming, Sound Elements -
     Daniel\n\nModels, Lighting, Camera, Programming - Ka\n\n\n\nVecteezy.com \nKateryna
-    Mishchuk\nSchmidsi\n\nBrackeys\nDani\nDave\n\nRafa Miguel\nDaFont\nGoogle Fonts"
+    Mishchuk\nSchmidsi\n\nBrackeys\nDani\nDave\n\nRafa Miguel\nDaFont\nGoogle Fonts\n\nThe
+    Elevator Bossa Nova by Bensound"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -444,7 +445,9 @@ MonoBehaviour:
     Fonts
 
 
-'
+
+
+    Audio Resources'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
