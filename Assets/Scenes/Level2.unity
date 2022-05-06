@@ -37445,6 +37445,12 @@ MonoBehaviour:
     smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
     smallCount: 30
     smallRate: 0.8
+  - bigEnemy: {fileID: 5031055592356559874, guid: f555f3e3d6153124782176634ca1b1f3, type: 3}
+    bigCount: 0
+    bigRate: 0
+    smallEnemy: {fileID: 5031055592356559874, guid: 33a835ac71baf084a8b263c83ea42418, type: 3}
+    smallCount: 0
+    smallRate: 0
   spawnPoint: {fileID: 1142581509}
   timeBetweenWaves: 5.5
   countdown: 2

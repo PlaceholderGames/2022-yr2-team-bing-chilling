@@ -117,6 +117,17 @@ public class WaveSpawner : MonoBehaviour
         //EnemiesAlive++;
     }
 
+    void Checker()
+    {
+        if (waveIndex == waves.Length && EnemiesAlive == 0)
+        {
+            //go back to main menu or next level
+            Debug.Log("mmmmmmmm lolis");
+            this.enabled = false;
+            WinLevel();
+        }
+    }
+
 }
 
 
