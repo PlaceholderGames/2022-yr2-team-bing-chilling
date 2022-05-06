@@ -59,6 +59,7 @@ public class EnemyFPS : MonoBehaviour
         {
 
             Die();
+            SoundManagerScript.PlaySound("deathSmallEnemy");
             PlayerStats.Money = PlayerStats.Money + moneyToGive;
             Debug.Log(PlayerStats.Money);
         }
@@ -149,6 +150,7 @@ public class EnemyFPS : MonoBehaviour
         if (_currentHealth <= 0f)
         {
             Die();
+            SoundManagerScript.PlaySound("deathPlayer");
         }
     }
 }

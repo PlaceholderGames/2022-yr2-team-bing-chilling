@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            SoundManagerScript.PlaySound("deathBigEnemy");
             PlayerStats.Money = PlayerStats.Money + moneyToGive;
             //Debug.Log(PlayerStats.Money);
         }
