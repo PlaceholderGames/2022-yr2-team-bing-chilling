@@ -13904,7 +13904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Thanks mr Artur but i''ll stop for not...
+  m_Text: 'Thanks mr Artur but i''ll stop for now...
 
     i''ll go to the main menu
     now'
@@ -16312,7 +16312,7 @@ MonoBehaviour:
   timeBetweenEnemies: 0.5
   waveCountdownText: {fileID: 328610738}
   nextLevel: Level2
-  levelToUnlock: 2
+  levelToUnlock: 3
 --- !u!114 &1013409335
 MonoBehaviour:
   m_ObjectHideFlags: 0
