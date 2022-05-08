@@ -37457,7 +37457,7 @@ MonoBehaviour:
   timeBetweenEnemies: 0.5
   waveCountdownText: {fileID: 1713170397}
   nextLevel: Level3
-  levelToUnlock: 4
+  levelToUnlock: 3
 --- !u!114 &1639687796
 MonoBehaviour:
   m_ObjectHideFlags: 0
